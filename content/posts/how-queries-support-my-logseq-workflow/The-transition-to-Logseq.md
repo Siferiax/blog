@@ -14,7 +14,7 @@ Welcome to my first attempt at a blog post! Also I thought it would be a good id
 
 This first post I want to tell a little bit about myself and explore how I got to using Logseq.
 
-To kind of reiterate the [[about/me]] page, I'm Siferiax and I'm a female from the Netherlands. (I really don't vibe with the word woman, the same goes for the equivalent in my native language 😂)
+I'm Siferiax and I'm a female from the Netherlands. (I really don't vibe with the word woman, the same goes for the equivalent in my native language 😂)
 
 At my core I'm a data nerd. Which means whenever I can make a spreadsheet of something, I will.  
 So naturally, I track(ed) a lot of data about myself as well. The place I track things, has changed a lot over the years. Google spreadsheets, Bullet Journaling, Goodnotes and various other apps, I've tried a lot. What I was looking for was an integrated system that could fill all my needs.  
