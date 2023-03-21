@@ -1,0 +1,47 @@
+:root {
+/*    --theme: rgb(255, 255, 255);
+    --entry: rgb(255, 255, 255);*/
+    --primary: #3F8CA2;
+/*    --secondary: rgb(108, 108, 108);
+    --tertiary: rgb(214, 214, 214);
+    --content: rgb(31, 31, 31);
+    --hljs-bg: rgb(28, 29, 33);
+    --code-bg: rgb(245, 245, 245);
+    --border: rgb(238, 238, 238);*/
+}
+
+.dark {
+/*General background:*/
+    --theme: #191010;
+
+/*Box background:*/
+    --entry: #251818;
+    --code-bg: #251818;
+	
+/*Terms & hr*/
+	--tertiary: #412529;
+	
+/*Borders:*/
+	--border: #3E2828;
+
+/*Headers & links:*/
+	--primary: #87C0D0;
+
+/*Special text:*/	
+    --secondary: #D7C1C1;
+	
+/*General text:*/
+    --content: #E9DBD8;
+	
+/*	--hljs-bg: rgb(46, 46, 51);*/
+}
+
+/*
+.list {
+    background: var(--code-bg);
+}
+
+.dark.list {
+    background: var(--theme);
+}
+*/
