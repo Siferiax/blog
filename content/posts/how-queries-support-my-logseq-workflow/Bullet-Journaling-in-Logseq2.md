@@ -75,7 +75,7 @@ And the underlying query. Including comments explaining the whole thing!
 ```
 ### The summary of my day
 I have a namespace `📓dagboek` and the subpage `📓dagboek/verwerken` that I use for writing a snippet about my day. These snippets get used for my week review to distil my week highlights.  
-I also want to transfer them to my physical multi-year journal, so they have to be small. When transferred the subpage gets removed from the reference so I'll know how much I've left to process.
+I also want to transfer them to my physical multi-year journal, so they have to be small. When I've written them in my physical journal, the subpage (/verwerken) gets removed from the reference so I'll know how much I've left to process.
 ### Braindump area
 Everything and anything that doesn't fit somewhere else goes here!  
 I have a simple template for the area. First any symptoms that I experienced the entire day and below that something I'm proud of and something I'm grateful for.  
@@ -89,3 +89,32 @@ For this I have a week planning template which has a block for each day of the w
 My day is divided into 3 parts, morning (wake-up time till 12:30), afternoon (12:30 till 17:00) and evening (17:00 till going to bed). As every block functions basically the same way I'll focus on Monday afternoon. ==update screenshot==
 ![mondayafternoon](mondayafternoon.png)
 
+In plain text, the afternoon bullet looks like this.
+```
+## ^^🌄 Middag^^
+||||
+| 🪫🔋⚪ 😖😌⚪ | [:h3 "🕯"] | Pauze (12:30-13:00) |
+|  | [:h3 "👩🏽‍💻"] | Werken |
+|  | [:h3 "🕯"] | Rustmoment |
+|  | [:h3 "🚆"] | Naar huis |
+| [:h3 "🪫🔋⚪"] | [:h3 "😖😌⚪"] | |
+```
+It's a header and below on the same bullet a markdown table with an empty header (`||||`).  
+Each row consists of 3 columns, the first for a check mark, the second for an icon and the third for a description. The first and last row are a bit special as you can see.
+
+Each afternoon and evening starts with a break. In the check mark column I'll put a ✅ when I took the break, and the icons already there I'll use to signify the energy and stress I had after the break. The same idea applies to the last row. This will mark the energy and stress at the end of the afternoon. I have the same row at the beginning and end of the morning and at the end of the evening.  
+These inputs inform what I will log into the energy and stress page properties I showed earlier. Those properties I use to get an overview of my energy and stress during the week (through a query), whereas these rows are easier for me in terms of actually recording those data points.
+
+The main rows are the activities I have planned for that moment in time. In a broad sense, there's no actual hours set, except for my two breaks. There are smaller breaks during the day (rustmoment). Those are to prevent myself from rushing from one activity to the next.  
+Because it is such a small list I can keep an overview and don't get overwhelmed. The rows are, for the most part, things I have to get done. All extra time is not planned to give myself space and flexibility. 
+
+I have a week planning page where I call the template each week. This page is used for the planning of the whole week. On this page the names of the day of the week get replaced with references to the future journal pages they'll be on. I fill these using the `/date picker` command.
+
+Every morning I go to the day's journal page and cut/paste the day plan from the week planning page (which is shown in the linked references of the journal page) into the journal page. 
+==screenshot==
+
+During the day I will log what I do and what happens in the child bullets beneath the overview table. The only things I don't log are the items planned on the table, unless I have notes to add. As mentioned I check those off in the table itself.  
+At the end of the day my Monday afternoon will then look something like this.
+==screenshot==
+
+Next time I will show you how I use queries on a custom start page to manage all I've talked about so far.
