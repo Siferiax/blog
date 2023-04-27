@@ -83,10 +83,10 @@ Beneath that, well, anything goes! Tasks that come to mind during the day, thoug
 ## Day planning and execution
 Every week, with my autism coach, I plan out the week ahead. What I will do in the morning, in the afternoon and in the evening. This forms the backbone of my daily log.
 
-For this I have a week planning template which has a block for each day of the week. ==needs an updated screenshot==
+For this I have a week planning template which has a block for each day of the week. 
 ![weekplanning](weekplanning.png)
 
-My day is divided into 3 parts, morning (wake-up time till 12:30), afternoon (12:30 till 17:00) and evening (17:00 till going to bed). As every block functions basically the same way I'll focus on Monday afternoon. ==update screenshot==
+My day is divided into 3 parts, morning (wake-up time till 12:30), afternoon (12:30 till 17:00) and evening (17:00 till going to bed). As every block functions basically the same way I'll focus on Monday afternoon. 
 ![mondayafternoon](mondayafternoon.png)
 
 In plain text, the afternoon bullet looks like this.
@@ -111,10 +111,13 @@ Because it is such a small list I can keep an overview and don't get overwhelmed
 I have a week planning page where I call the template each week. This page is used for the planning of the whole week. On this page the names of the day of the week get replaced with references to the future journal pages they'll be on. I fill these using the `/date picker` command.
 
 Every morning I go to the day's journal page and cut/paste the day plan from the week planning page (which is shown in the linked references of the journal page) into the journal page. 
-==screenshot==
+![weekplanning_to_journal_1.png](weekplanning_to_journal_1.png)
+
+I outdent the blocks under the page link and remove the page link.
+![weekplanning_to_journal_2.png](weekplanning_to_journal_2.png)
 
 During the day I will log what I do and what happens in the child bullets beneath the overview table. The only things I don't log are the items planned on the table, unless I have notes to add. As mentioned I check those off in the table itself.  
 At the end of the day my Monday afternoon will then look something like this.
-==screenshot==
+![mondayafternoon_finished.png](mondayafternoon_finished.png)
 
 Next time I will show you how I use queries on a custom start page to manage all I've talked about so far.
