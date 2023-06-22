@@ -1,6 +1,6 @@
 ---
 title: "From Journal pages to the Start Page"
-date: 2023-05-01
+date: 2023-08-01
 series: 
   - How queries support my Logseq workflow
 tags: 

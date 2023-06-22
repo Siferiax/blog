@@ -136,4 +136,4 @@ I note my week's highlights and determine what I'm proud of and what I'm thankfu
 
 ![weeklylogcomplete](weeklylogcomplete.png)
 ## The Daily Log
-Most of the magic of my set-up happens in the daily log. However this blogpost is getting way too long, so I will save that magic for the next post.
+Most of the magic of my set-up happens in the daily log. However this blogpost is getting way too long, so I will save that magic for the [next post](../bullet-journaling-in-logseq2).
