@@ -47,3 +47,27 @@ I just don't like the idea of needing 10 different zettels to express one idea.
 Finally I landed on the term best suited for what I was actually doing: exploring. I am exploring my thoughts as I write them down.
 I just never get to neatly defined thoughts to put in a zettelkasten.
 I'm not ~~a writer anyway~~ that kind of writer anyway.
+
+I don't want to dismiss zettelkasten outright though. I want to keep the possibility open.
+I copied all the templates from the workflow and put the 42 notes I had in the templates I felt they fit in.
+While doing so I molded the templates to something fit for me.
+I'm making a real true effort to keep my Logseq graph in Dutch and not borrow all the English terms I come across. Therefore, the first step to making a template my own is translating it to Dutch. This in and off itself is a mighty exercise as we Dutchies are very good at borrowing all the words from all the languages. To the point finding the correct Dutch word can be a challenge as the English one is just so integrated into our language already (e.g. review).
+The second hurdle to take is proper property keys. I like those to be unique most of the time. In the workflow the property `date` is used. This would be `datum` in Dutch, however I already use it for a different purpose. Besides that all these things live on the journal pages and they are a date already. So it isn't necessary information. What I do like is following a note through time.
+As stated I want the ability to refine my note. So I don't want to use references and embeds, I want to change the note itself. So I decided on the property `updates`. And I couldn't be bothered translating it, as updates is nice and concise and any translation wouldn't be.
+In updates I will put all journal page links for dates that I worked on the note.
+I use `onderwerp` instead of `tags`. I use tags for pages as they are an actual attribute in queries to use. And I specifically use tags for the P.A.R.A set up, but that's will be a separate blogpost.
+Onderwerp translates to subject and that is exactly how I use it.
+Lastly I changed `type` to `soort`. It's a synonym as type is technically also a Dutch word, but I like soort better in this case. 
+Wild at heart uses fleeting, and I decided soort would be `🧭verkenning` (I like icons!), translated from exploring. 
+Initially I used `LATER` (I use `TODO` in task management) and a bold title. Now I removed the `LATER`, as I dislike the cross out of `DONE` for this. I don't bold the title either as it is not necessary for me.
+I added `stadium` (stage) to indicate stage of growth, as a replacement for `LATER`.
+This is the final template:
+```markdown
+template:: verkenning
+soort:: [[🧭verkenning]]
+onderwerp::
+stadium:: 🌱🌿🌳
+updates:: <%today%>
+```
+
+Later I have added the soort `📚les` (lesson) to the template, as I felt the need to log those as a separate category. 
