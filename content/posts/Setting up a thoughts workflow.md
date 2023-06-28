@@ -10,41 +10,46 @@ tags:
 TocOpen: false
 draft: true
 ---
-I've been exploring [Zettelkasten](https://zettelkasten.de/) a lot. Reading tons of articles for inspiration and understanding. Every time I concluded it didn't fit me. This was not *my* PKM system.
-At the same time I was very frustrated about my set up.
+I've been exploring [Zettelkasten](https://zettelkasten.de/) a lot. Reading tons of articles for inspiration and understanding. And recently I stumbled upon [Jay Colbert's Zettelkasten workflow](https://wilde-at-heart.garden/pages/my-zettelkasten-workflow-from-start-to-finish/). Inspiring change and this blogpost.
 
-However recently I stumbled upon [Jay Colbert's Zettelkasten workflow](https://wilde-at-heart.garden/pages/my-zettelkasten-workflow-from-start-to-finish/).
-What I like about Jay's workflow is that he starts from the journal page for everything. And that he has a specific template for each of his note types.
+I have noticed an increase in notes I need to dig up and work on more at a later time. And I also have gathered quite a few references that I want to process further. 
+So while I had dismissed zettelkasten every time I read about it, maybe it was time to reconsider.
+Jay's article gave me the inspiration required.
+
+In this blogpost I will show you how I came to a system for myself based on Jay's article. Reading his article will give extra context, but I will do my best to not make it required reading for this one.
+
+## Setting the stage
+The zettelkasten system as I have come to understand it has three categories of notes: fleeting notes, main notes (a.k.a. zettels, or sometimes permanent notes) and reference notes (a.k.a. literature notes).
+
+What I like about Jay's workflow is that he starts from the Logseq journal page for everything. And that he has a specific template for each of his note types.
 
 At this time I have gathered 42 notes I would consider part of my Personal Knowledge database. I feel this is a nice amount to experiment with. It provides enough bulk to see if and how a set up works. And there aren't too many notes to put in a different set up.
 
+## Not actually zettelkasten
+I completely drop the notion of atomic notes, or zettels. 
+Examples I've seen don't seem to map on my own notes in terms of structure.
+I just don't like the idea of needing 10 different zettels to express one (complex) idea.
+I just never get to neatly defined thoughts to put in a zettelkasten.
+I'm not ~~a writer anyway~~ that kind of writer anyway. ("Zettelkasten is a tool for writing" - [Bob Doto](https://writing.bobdoto.computer))
+
+## Fleeting notes
 The humble fleeting note. I first decided, based on my understanding, that this was my ideas. Thoughts I hadn't actually processed further.
 I still like this idea. The notion that "everything is a fleeting note", doesn't quite work well for me. The note that states "today I played World of Warcraft" isn't really a thought that needs further processing. That's just what I did that day.
 Jay makes this distinction as well. Using a template for those fleeting notes to be processed more in the future.
 
-I've copied much of his workflow on a process level. The exact property names differ, but they are very similar. However my definitions and how I actually use the system are different.
+Fleeting is just not the right term for me. My notes are in the space between fleeting (I read that as short term) and zettels (long term, keep forever, single idea notes).
+In addition I make an effort to keep my graph in my native language (Dutch) as much as possible.
 
-I completely drop the notion of atomic notes, or zettels. 
-Examples I've seen don't seem to map on my own notes in terms of structure.
-I just don't like the idea of needing 10 different zettels to express one (complex) idea.
-
-The main drawback of Zettelkasten for me is two fold I think. The "unique" and "atomic" idea writing and the idea of making an individual page for all of that.
-
-I just never get to neatly defined thoughts to put in a zettelkasten.
-I'm not ~~a writer anyway~~ that kind of writer anyway. ("Zettelkasten is a tool for writing" - [Bob Doto](https://writing.bobdoto.computer))
-
-I don't want to dismiss zettelkasten outright though. I want to keep the possibility open.
-I copied all the templates from Jay's workflow and put the 42 notes I had in the templates I felt they fit in.
-While doing so I molded the templates to something fit for me.
-==soorten uitleggen==
-
-==Focus op fleeting==
-
-Jay uses fleeting, and I decided soort would be `🧭verkenning` (I like icons!), translated from exploring. 
+On his website Jay explains that he uses his Digital Garden for divergence and his Zettelkasten for convergence.[^1]
+# ==hier gebleven ==
 
 Working through this, I've landed on the term best suited for what I am actually doing: exploring. I am exploring my thoughts as I write them down.
 
-For each of Jay's templates I considered each of the properties. Which to keep or change and which I didn't need. I also tried to translate them to Dutch in my continued effort to keep my graph in my native language as much as possible.
+Jay uses fleeting, and I decided soort would be `🧭verkenning` (I like icons!), translated from exploring. 
+
+
+
+For each of Jay's templates I considered each of the properties. Which to keep or change and which I didn't need. 
 
 Date => Updates
 In Jay's workflow the property `date` is used. As all notes live on a journal page this doesn't add value for me. Jay cites it's about sorting. Using advanced queries I get the journal-day attribute which is in `YYYYMMDD` format for sorting.
@@ -74,9 +79,7 @@ stadium:: 🌱🌿🌳
 updates:: <%today%>
 ```
 
-==Focus op referenties==
-
-
+## Reference notes
 References
 ```markdown
 LATER `[[Referentie link]]`
@@ -85,7 +88,10 @@ soort:: [[🔍uitzoeken]]
 onderwerp::
 ```
 
-==Focus op potentiële zettels==
+## Zettels
+I don't want to dismiss zettelkasten outright though. I want to keep the possibility open.
+I copied all the templates from Jay's workflow and put the 42 notes I had in the templates I felt they fit in.
+While doing so I molded the templates to something fit for me.
 
 ==Insight uitleggen==
 I also adjusted the zettel templates from Jay. The page template is nearly the same.
@@ -118,7 +124,7 @@ template-including-parent:: false
 	  stadium:: 🌱🌿🌳
 	  updates:: <%today%>
 	- Inzicht verder uitgediept
-	- > quote etc.[1]  
+	- > quote etc.[^1]  
 	- [^1]: bron van quote etc. Ref link
 	- ---
 	- 🔼 bovenliggend inzicht
@@ -126,8 +132,7 @@ template-including-parent:: false
 	- 🔁 relaties met andere inzichten
 ```
 
-==Bonus: lessen==
-
+## Bonus: lessons
 I have added the soort `📚lessen` (lesson), as I felt the need to log those as a separate category. 
 ```markdown
 📚 Les in 1 zin
@@ -136,3 +141,5 @@ soort:: [[📚lessen]]
 onderwerp:: 
 updates:: <%today%>
 ```
+
+[^1]: insert link
