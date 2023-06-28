@@ -10,64 +10,129 @@ tags:
 TocOpen: false
 draft: true
 ---
-So I have been musing on the best way to set up a workflow for my thoughts.
-I've taken inspiration from many places.
-Considered Zettelkasten, Digital Gardens, P.A.R.A, and not actually named ideas.
-They all failed me in one way or the other. However, they do all contain *elements* I like.
-- I like that Zettelkasten is about forming unique ideas and separating main notes (zettels) from literature notes (references). Whereby zettels are your own ideas and words.
-- I like the growth analogy of Digital Gardens and using 🌱🌿🌳 icons to indicate the maturity of a post.
-- I like P.A.R.A's simple and effective organisation.
-Then I stumbled upon Wild at hearts' Zettelkasten workflow and I really liked the idea of it.
-The main drawback of Zettelkasten for me is two fold I think. The "unique" and "atomic" idea writing and the idea of making an individual page for all of that.
-What I like about Wild at hearts' workflow is that they start from the journal page for everything. Though their zettels also get their own page.
-Having some, but not too many notes now myself, I have been able to experiment with set ups, without a lot of extra work to rearrange things.
-In total there are 42 notes I have to content with.
+I've been exploring [Zettelkasten](https://zettelkasten.de/) a lot. Reading tons of articles for inspiration and understanding. Every time I concluded it didn't fit me. This was not *my* PKM system.
+At the same time I was very frustrated about my set up.
 
-My old set up I labeled those 42 items in a certain way, but I kept bumping up against not being really clear on what my labels represented. And also the labels not really capturing what i did put under them either.
-I wanted the idea of fleeting notes and literature notes and permanent notes, however I got their definitions from different places where they meant differing things.
+However recently I stumbled upon [Jay Colbert's Zettelkasten workflow](https://wilde-at-heart.garden/pages/my-zettelkasten-workflow-from-start-to-finish/).
+What I like about Jay's workflow is that he starts from the journal page for everything. And that he has a specific template for each of his note types.
+
+At this time I have gathered 42 notes I would consider part of my Personal Knowledge database. I feel this is a nice amount to experiment with. It provides enough bulk to see if and how a set up works. And there aren't too many notes to put in a different set up.
 
 The humble fleeting note. I first decided, based on my understanding, that this was my ideas. Thoughts I hadn't actually processed further.
 I still like this idea. The notion that "everything is a fleeting note", doesn't quite work well for me. The note that states "today I played World of Warcraft" isn't really a thought that needs further processing. That's just what I did that day.
-Wild at Heart makes this distinction as well. Using a template for those fleeting notes to be processed more in the future.
+Jay makes this distinction as well. Using a template for those fleeting notes to be processed more in the future.
 
-I've copied much of their workflow on a process level. The exact property names differ, but they are very similar. However my definitions and how I actually use the system are different.
+I've copied much of his workflow on a process level. The exact property names differ, but they are very similar. However my definitions and how I actually use the system are different.
 
-I completely drop the notion of atomic notes, or zettels. These don't work for me. I can't capture my thinking in one neat little snippet.
-I'm more the type to expand and refine my fleeting notes.
-As I've been working on a fleeting note titled "Logseq chaos", I got a better sense of what I was actually doing.
-This note I was working through a problem. I felt I was bumping up against an issue and the first thing I did was brainstorm the issue. What actually is bothering me that I experience this chaos.
-Then as I was doing this, solutions and ideas came up. They got added to the note.
-As I was working through this brainstorm slowly conclusions emerged.
-Finally the note is now title "Logseq structure" and has two headings "problem description" and "solution direction". Which have a clearly defined problem and a hypothesis for a solution to this problem.
+I completely drop the notion of atomic notes, or zettels. 
+Examples I've seen don't seem to map on my own notes in terms of structure.
+I just don't like the idea of needing 10 different zettels to express one (complex) idea.
 
-Not something to turn into a zettel really. At least not in my opinion.
-Other note types included ideas, but they had many components that fit together.
-I just don't like the idea of needing 10 different zettels to express one idea. 
+The main drawback of Zettelkasten for me is two fold I think. The "unique" and "atomic" idea writing and the idea of making an individual page for all of that.
 
-Finally I landed on the term best suited for what I was actually doing: exploring. I am exploring my thoughts as I write them down.
 I just never get to neatly defined thoughts to put in a zettelkasten.
-I'm not ~~a writer anyway~~ that kind of writer anyway.
+I'm not ~~a writer anyway~~ that kind of writer anyway. ("Zettelkasten is a tool for writing" - [Bob Doto](https://writing.bobdoto.computer))
 
 I don't want to dismiss zettelkasten outright though. I want to keep the possibility open.
-I copied all the templates from the workflow and put the 42 notes I had in the templates I felt they fit in.
+I copied all the templates from Jay's workflow and put the 42 notes I had in the templates I felt they fit in.
 While doing so I molded the templates to something fit for me.
-I'm making a real true effort to keep my Logseq graph in Dutch and not borrow all the English terms I come across. Therefore, the first step to making a template my own is translating it to Dutch. This in and off itself is a mighty exercise as we Dutchies are very good at borrowing all the words from all the languages. To the point finding the correct Dutch word can be a challenge as the English one is just so integrated into our language already (e.g. review).
-The second hurdle to take is proper property keys. I like those to be unique most of the time. In the workflow the property `date` is used. This would be `datum` in Dutch, however I already use it for a different purpose. Besides that all these things live on the journal pages and they are a date already. So it isn't necessary information. What I do like is following a note through time.
-As stated I want the ability to refine my note. So I don't want to use references and embeds, I want to change the note itself. So I decided on the property `updates`. And I couldn't be bothered translating it, as updates is nice and concise and any translation wouldn't be.
-In updates I will put all journal page links for dates that I worked on the note.
-I use `onderwerp` instead of `tags`. I use tags for pages as they are an actual attribute in queries to use. And I specifically use tags for the P.A.R.A set up, but that's will be a separate blogpost.
+==soorten uitleggen==
+
+==Focus op fleeting==
+
+Jay uses fleeting, and I decided soort would be `🧭verkenning` (I like icons!), translated from exploring. 
+
+Working through this, I've landed on the term best suited for what I am actually doing: exploring. I am exploring my thoughts as I write them down.
+
+For each of Jay's templates I considered each of the properties. Which to keep or change and which I didn't need. I also tried to translate them to Dutch in my continued effort to keep my graph in my native language as much as possible.
+
+Date => Updates
+In Jay's workflow the property `date` is used. As all notes live on a journal page this doesn't add value for me. Jay cites it's about sorting. Using advanced queries I get the journal-day attribute which is in `YYYYMMDD` format for sorting.
+What I do want is the ability to refine my note. So I don't want to use references and embeds, I want to change the note itself.
+And I want to see this somehow.
+I decided on the property name `updates`. In updates I will put all journal page links for dates that I worked on the note. I feel the Dutch word "aanpassingen" is too long, so I kept this one English.
+
+Tags => Onderwerp
+I use `onderwerp` instead of `tags`. I use tags for pages as they are an actual attribute in queries to use. And I specifically use tags for the P.A.R.A set up, but that will be a separate blogpost.
 Onderwerp translates to subject and that is exactly how I use it.
-Lastly I changed `type` to `soort`. It's a synonym as type is technically also a Dutch word, but I like soort better in this case. 
-Wild at heart uses fleeting, and I decided soort would be `🧭verkenning` (I like icons!), translated from exploring. 
-Initially I used `LATER` (I use `TODO` in task management) and a bold title. Now I removed the `LATER`, as I dislike the cross out of `DONE` for this. I don't bold the title either as it is not necessary for me.
-I added `stadium` (stage) to indicate stage of growth, as a replacement for `LATER`.
+
+Type => Soort
+I changed `type` to `soort`. It's a synonym as type is also a Dutch word, but I like soort better in this case. 
+
+Status => Stadium
+I like the growth analogy from Digital Gardens. Status doesn't really work well with that. Besides I use that property for other things already. So I choose `stadium`, Dutch for stage.
+Jay uses status for his zettels. I like to use them for my version of fleeting notes as well.
+It also serves as a replacement for the `TODO` Jay uses. I filter my notes based on `stadium` instead.
+
 This is the final template:
 ```markdown
+🧭 Notitie titel
 template:: verkenning
 soort:: [[🧭verkenning]]
-onderwerp::
+onderwerp:: 
 stadium:: 🌱🌿🌳
 updates:: <%today%>
 ```
 
-Later I have added the soort `📚les` (lesson) to the template, as I felt the need to log those as a separate category. 
+==Focus op referenties==
+
+
+References
+```markdown
+LATER `[[Referentie link]]`
+template:: ref-link
+soort:: [[🔍uitzoeken]]
+onderwerp::
+```
+
+==Focus op potentiële zettels==
+
+==Insight uitleggen==
+I also adjusted the zettel templates from Jay. The page template is nearly the same.
+I use a query in the journal template to get some properties from the page so I don't need to record them twice.
+I haven't actually tested these templates for my own workflow, so I don't know how well they work for me.
+
+```markdown
+LATER [[🧿inzicht]] `[[Notitie titel]]`
+template:: inzicht
+	- query-properties:: [:onderwerp :stadium :updates]
+	  #+BEGIN_QUERY
+	  {:title [:b "Eigenschappen"]
+ 	   :query [:find (pull ?p [*])
+ 	    :in $ ?parent
+  	    :where
+   	     [?parent :block/refs ?p]
+         [?p :block/name ?n]
+         (not [(contains? #{"later" "🧿inzicht"} ?n)])
+       ]
+       :inputs [:parent-block]
+	  }
+	  #+END_QUERY
+```
+
+```markdown
+template:: inzicht-pagina
+template-including-parent:: false
+	- soort:: [[🧿inzicht]]
+	  onderwerp::
+	  stadium:: 🌱🌿🌳
+	  updates:: <%today%>
+	- Inzicht verder uitgediept
+	- > quote etc.[1]  
+	- [^1]: bron van quote etc. Ref link
+	- ---
+	- 🔼 bovenliggend inzicht
+	- ---
+	- 🔁 relaties met andere inzichten
+```
+
+==Bonus: lessen==
+
+I have added the soort `📚lessen` (lesson), as I felt the need to log those as a separate category. 
+```markdown
+📚 Les in 1 zin
+template:: lessen
+soort:: [[📚lessen]]
+onderwerp:: 
+updates:: <%today%>
+```
