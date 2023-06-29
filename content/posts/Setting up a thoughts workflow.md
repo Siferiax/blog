@@ -33,51 +33,50 @@ I just never get to neatly defined thoughts to put in a zettelkasten.
 I'm not ~~a writer anyway~~ that kind of writer anyway. ("Zettelkasten is a tool for writing" - [Bob Doto](https://writing.bobdoto.computer))
 
 ## Fleeting notes
-The humble fleeting note. I first decided, based on my understanding, that this was my ideas. Thoughts I hadn't actually processed further.
+I first decided, based on my understanding, that fleeting notes were my ideas. Thoughts I hadn't actually processed further.
 I still like this idea. The notion that "everything is a fleeting note", doesn't quite work well for me. The note that states "today I played World of Warcraft" isn't really a thought that needs further processing. That's just what I did that day.
 Jay makes this distinction as well. Using a template for those fleeting notes to be processed more in the future.
+He writes,
+> In Logseq, I have a template for the fleeting notes I know will feed into my Zettelkasten. Usually, these are ideas for Zettels.
 
 Fleeting is just not the right term for me. My notes are in the space between fleeting (I read that as short term) and zettels (long term, keep forever, single idea notes).
 In addition I make an effort to keep my graph in my native language (Dutch) as much as possible.
 
 On his website Jay explains that he uses his Digital Garden for divergence and his Zettelkasten for convergence.[^1]
-# ==hier gebleven ==
+My notes are often both. First I brainstorm and they diverge, then I refine the note to be more concise and to the point. This is what I did to contemplate my new set up. Brainstorming what my notes were for, what structure they followed. 
+This helped me find the term best suited for what I am actually doing: exploring. I am exploring my thoughts as I write them down.
+Translating that I got to the note type `🧭verkenning` (I like icons!).
 
-Working through this, I've landed on the term best suited for what I am actually doing: exploring. I am exploring my thoughts as I write them down.
+For the template, I rearranged and changed Jay's fleeting note template.
 
-Jay uses fleeting, and I decided soort would be `🧭verkenning` (I like icons!), translated from exploring. 
+```
+- TODO **Note goes here**
+  date::
+  tags:: 
+  type:: [[fleeting]]
+```
 
+```
+- 🧭 Notitie titel
+  template:: verkenning
+  soort:: [[🧭verkenning]]
+  onderwerp:: 
+  stadium:: 🌱🌿🌳
+  updates:: <%today%>
+```
 
-
-For each of Jay's templates I considered each of the properties. Which to keep or change and which I didn't need. 
-
-Date => Updates
-In Jay's workflow the property `date` is used. As all notes live on a journal page this doesn't add value for me. Jay cites it's about sorting. Using advanced queries I get the journal-day attribute which is in `YYYYMMDD` format for sorting.
-What I do want is the ability to refine my note. So I don't want to use references and embeds, I want to change the note itself.
-And I want to see this somehow.
-I decided on the property name `updates`. In updates I will put all journal page links for dates that I worked on the note. I feel the Dutch word "aanpassingen" is too long, so I kept this one English.
-
-Tags => Onderwerp
-I use `onderwerp` instead of `tags`. I use tags for pages as they are an actual attribute in queries to use. And I specifically use tags for the P.A.R.A set up, but that will be a separate blogpost.
-Onderwerp translates to subject and that is exactly how I use it.
-
-Type => Soort
 I changed `type` to `soort`. It's a synonym as type is also a Dutch word, but I like soort better in this case. 
 
-Status => Stadium
-I like the growth analogy from Digital Gardens. Status doesn't really work well with that. Besides I use that property for other things already. So I choose `stadium`, Dutch for stage.
-Jay uses status for his zettels. I like to use them for my version of fleeting notes as well.
-It also serves as a replacement for the `TODO` Jay uses. I filter my notes based on `stadium` instead.
+I use `onderwerp` instead of `tags`. Onderwerp is the Dutch word for subject. I choose this to indicate the purpose of the property more clearly.
 
-This is the final template:
-```markdown
-🧭 Notitie titel
-template:: verkenning
-soort:: [[🧭verkenning]]
-onderwerp:: 
-stadium:: 🌱🌿🌳
-updates:: <%today%>
-```
+I like the growth analogy from Digital Gardens, to indicate the maturity of my exploration. So I added the property `stadium`, Dutch for stage.
+It also serves as a replacement for the `TODO` Jay uses. I already use `TODO` for my task management.
+
+In Jay's workflow the property `date` is used. As all notes live on a journal page this doesn't add value for me. Jay cites it's about sorting. Using advanced queries I get the journal-day attribute which is in `YYYYMMDD` format for sorting.
+What I do want is the ability to refine my note. So I don't want to use references and embeds, I want to change the note itself. And I want to see that I changed it.
+I decided on the property `updates`. In updates I will put all journal page links for dates that I worked on the note. I feel the Dutch word "aanpassingen" is too long, so I kept this one English.
+
+Finally, I put a title at the top and then use indented bullets underneath this template to further explore my thoughts.
 
 ## Reference notes
 References
