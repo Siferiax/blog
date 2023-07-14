@@ -5,7 +5,7 @@ series:
   - How queries support my Logseq workflow
 tags: 
   - Logseq
-  - Personal
+  - Bullet Journal
 TocOpen: false
 draft: false
 ---

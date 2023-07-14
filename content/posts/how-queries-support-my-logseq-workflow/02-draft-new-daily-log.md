@@ -5,7 +5,6 @@ series:
   - How queries support my Logseq workflow
 tags: 
   - Logseq
-  - Personal
 TocOpen: false
 draft: true
 ---
