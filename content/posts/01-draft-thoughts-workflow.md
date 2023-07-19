@@ -101,13 +101,15 @@ As I write this I have now 9 exploration notes. So far using the template for th
 All I need to do now is get through the 14 open reference notes. These include 2 new ones added after this new set up. (for those keeping count, that means I have 10 closed references notes)
 
 ## Reference notes
-For reference notes I use a pretty similar template. It just lacks the stage and update properties. Instead I use later to mark it more as a task and I will link to a page with more details on the reference. The "soort" here is "uitzoeken" (investigate).
+For reference notes I use a pretty similar template. It just lacks the update properties. Instead I will link to a page where I actually work on processing the reference. I added the property "bron" (source) to link to the reference. The "soort" here is "uitzoeken" (investigate).
 
 ```markdown
-LATER `[[Referentie link]]`
+`[[Referentie pagina]]`
 template:: ref-link
 soort:: [[🔍uitzoeken]]
 onderwerp::
+stadium:: 🌱🌿🌳
+bron::
 ```
 
 This part is still in prototype. I haven't used it all that much, so it isn't finished yet.  
