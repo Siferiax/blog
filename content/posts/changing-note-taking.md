@@ -1,13 +1,13 @@
 ---
 title: "Changing the way I make notes"
-date: 2023-07-13
+date: 2023-07-23
 series: 
   - Musings
 tags:
   - Logseq
   - PKM
 TocOpen: false
-draft: true
+draft: false
 ---
 I've been exploring [Zettelkasten](https://zettelkasten.de/) a lot. Reading tons of articles for inspiration and understanding. And recently I stumbled upon [Jay Colbert's Zettelkasten workflow](https://wilde-at-heart.garden/pages/my-zettelkasten-workflow-from-start-to-finish/). Inspiring change and this blogpost.
 
