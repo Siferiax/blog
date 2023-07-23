@@ -82,7 +82,7 @@ I decided on the property `updates`. In updates I will put all journal page link
 Finally, I put a title at the top and then use indented bullets underneath this template to further explore my thoughts.
 
 ## In Practice
-Turn out that only 6 of those 42 notes I mentioned actually fit the "exploring" category of notes. The vast majority are references, as established, but a sizable amount was neither.  
+Turns out that only 6 of those 42 notes I mentioned actually fit the "exploring" category of notes. The vast majority are references, as established, but a sizable amount was neither.  
 When I went through each of my notes, reforming them to fit my new template, 14 notes felt unfit for this new template. I quickly noticed a pattern in my note taking when doing this exercise. I wasn't just exploring my thoughts, I was also noting down life lessons.
 
 Time for a new template then. These life lessons don't need to be explored, but they do need to be collected in some way.  
