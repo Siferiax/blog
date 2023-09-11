@@ -1,3 +1,13 @@
+---
+title: ""
+date: 2023-10-01
+series: 
+  - How queries support my Logseq workflow
+tags:
+  - Logseq
+TocOpen: false
+draft: true
+---
 I wanted to make a blogpost about my new start page, however as I keep iterating on it, it kept changing. So every time I was working on a draft, it was quickly outdated.  
 Still I keep trying. I'll go over the reason why I moved away from opening Logseq on the journal pages. The basic idea of the start page and how I keep changing things.  
 Of course I will go over some of the queries I use and how to implement something similar yourself.
