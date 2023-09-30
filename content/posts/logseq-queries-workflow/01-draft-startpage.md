@@ -1,5 +1,5 @@
 ---
-title: ""
+title: "Using a start page"
 date: 2023-10-01
 series: 
   - How queries support my Logseq workflow
@@ -19,5 +19,11 @@ This is how I got to my start page. One place to show what I need to see from wh
 In my very first blogpost I mentioned that I require a good overview. That's what my start page is suppose to help with. And that's what I've been constantly adjusting and improving.
 
 At first my start page was incredibly long and had many different things on it. Not just things for today, but also for this week, this month, this year. And even though I mostly just used the top of the page, the rest was there, ready to overwhelm me.  
+
+These days all the content is split between my start page and the default Contents page. The latter is shown by default when you open the sidebar, for quick access.  
+My start page now only hold information that is relevant for me "at all times", whereas the Contents page is a collection of things I want quick access to. Some of the Contents page is redunant with my start page. This way I can still access it when working on another page in Logseq.
+
+IDEAS
+- something on config file queries?
 
 
