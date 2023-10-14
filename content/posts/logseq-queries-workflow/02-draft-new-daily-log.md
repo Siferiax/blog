@@ -8,7 +8,7 @@ tags:
 TocOpen: false
 draft: true
 ---
-One of my biggest joys in Logseq are the queries. By this time they are deeply integrated in how I operate. In the [previous post](../bullet-journaling-in-logseq) I showed how my daily was set up. I also mentioned I simplified it.
+One of my biggest joys in Logseq are the queries. By this time they are deeply integrated in how I operate. In the [previous post](../bullet-journaling-in-logseq2) I showed how my daily was set up. I also mentioned I simplified it.
 
 ==screenshot==
 
