@@ -9,19 +9,19 @@ TocOpen: false
 draft: false
 ---
 I wanted to make a blogpost about my new start page, however as I keep iterating on it, it kept changing. So every time I was working on a draft, it was quickly outdated.  
-Still I keep trying. I'll go over the reason why I moved away from opening Logseq on the journal pages (default setting). The basic idea of the start page and how I keep changing things.  
+Still, I'll keep trying. I'll go over the reason why I moved away from opening Logseq on the journal pages (default setting), the basic idea of the start page and how I keep changing things.  
 Primarily I will go over the queries I use on the start page.
 
 The previous blogposts have been building to this post. I've outlined my basic use of Logseq, but now it is time for queries.  
 The biggest thing I ran into with the journal pages was that there was just too much on them. And a lot of this information isn't necessarily something I want to see all the time. On top of that, there is information in pages other than my journal, that I do want to see more easily.
 
 This is how I got to my start page. One place to show all the information I need. Therefore, my start page consists solely of queries.  
-In my very first blogpost I mentioned that I require a good overview. That's what my start page is suppose to help with. And that's what I've been constantly adjusting and improving as I use it.
+In my very first blogpost I mentioned that I require a good overview. That's what my start page is supposed to help with. And that's what I've been constantly adjusting and improving as I use it.
 
-At first, my start page was incredibly long and had many different things on it. Not just things for today. But also for this week, this month, this year. And even though I mostly just used the top of the page, the rest was there, ready to overwhelm me.  
+At first, my start page was incredibly long and had many different things on it. Not just things for today, but also for this week, this month, this year. And even though I mostly just used the top of the page, the rest was there, ready to overwhelm me.  
 
 These days, all the content is split between my start page and the default Contents page. The latter is shown by default when you open the right sidebar.  
-My start page now only hold information that is relevant for me "at all times", whereas the Contents page is a collection of things I want quick access to.
+My start page now only holds information that is relevant for me "at all times", whereas the Contents page is a collection of things I want quick access to.
 I'll cover the contents page in another blogpost.
 
 Let's talk about the start page in detail. Below you'll see a screenshot of the entire page. I will tackle it one query at a time, starting with 🗓 Planning.
@@ -87,14 +87,15 @@ Here's the query I use to accomplish this.
 #+END_QUERY
 ```
 
-In simple terms, the morning block is shown when there are empty cells in the morning table. The afternoon block is shown when the morning block doesn't have empty cells and the afternoon one does. And the evening block is shown when the afternoon block doesn't have empty cells and the evening one does.
+In simple terms, the morning block is shown when there are empty cells in the morning table. The afternoon block is shown when the morning block doesn't have empty cells and the afternoon one does. The evening block is shown when the afternoon block doesn't have empty cells and the evening one does.
 
 In the screenshot evening (🌌 Avond) is shown. Morning and afternoon have been completed for this day.  
 This gives me a nice overview of my plans for the day, without overwhelming me.
+
 ## Notes
 The next query is for notes (📜 Notities). It pulls the information from the notes section of today's journal page (this section was shown in my [previous blogpost](../new-daily-log)).  
 
-In fact, this section is a bit of a cheeky section. Instead of just showing data, it actually serves as a quick capture. As the query returns the actual block of data, it can be edited here on the start page. The query only return the last block of the data, which I make sure is always an empty block. Thus, I can type in data under notes, which is edited both here and on the journal page. With a double enter, a new block is added and the query refreshes to only show this new empty block. Ready to accept a new quick capture.
+In fact, this is a bit of a cheeky section. Instead of just showing data, it actually serves as a quick capture. As the query returns the actual block of data, it can be edited here on the start page. The query only returns the last block of the data, which I make sure is always an empty block. Thus, I can type in data under notes, which is edited both here and on the journal page. With a double enter, a new block is added and the query refreshes to only show this new empty block, ready to accept a new quick capture.
 
 Here you can see the notes query.
 ```clojure
@@ -121,10 +122,11 @@ Here you can see the notes query.
 ```
 
 Note: any variable as defined by `?` can have multiple matches/values. The number of those is reduced by the different clauses. So long as my journal page only has one block that contains the text "📜 Notities", `?par` will return only one specific block. Through the other clauses `?b` will end up being a specific block as well.
+
 ## Activities
 The next query is for activities (⏳ Activiteiten). It also pulls the information from today's journal page (this section was shown in my [previous blogpost](../new-daily-log)), yet uses the activities block.  
 
-In fact it is almost identical to the notes query, except is shows all child blocks at all times. This way I can be sure that I don't accidentally add the same activity twice on the same day.
+In fact, it is almost identical to the notes query, except it shows all child blocks at all times. This way I can be sure that I don't accidentally add the same activity twice on the same day.
 
 Here is the activities query.
 ```clojure
@@ -146,12 +148,13 @@ Here is the activities query.
 #+END_QUERY
 ```
 
-The food (🍽) and [redacted] query works similar to the activities query. Get specific blocks from today's journal page. It just gets the blocks itself instead of child blocks and thus lacks the `[?b :block/parent ?par]` line and just returns `?par`.
+The food (🍽) and [redacted] query works similarly to the activities query. Get specific blocks from today's journal page. It just gets the blocks itself instead of child blocks and thus lacks the `[?b :block/parent ?par]` line and just returns `?par`.
+
 ## Breaks and trackers
 The breaks and trackers (🕯️ en ✴️) query also pulls data from today's journal page. For breaks (🕯️) it pulls specific blocks, just like the notes, activities and food queries. For trackers it pulls in all blocks with properties, which as shown in my [previous blogpost](../new-daily-log) are now consolidated under the block ✴️ Trackers.
 
-One annoying thing with properties is that for the simple query syntax `(property ?b :name "value")` the `"value"` part must be filled. When left to `""` it doesn't select those blocks with an empty value, instead it selects all blocks with that property regardless of value. This is why my query is not using that syntax throughout.  
-This query will show different blocks based on different times and conditions. (explanation in the comments of the query)
+One annoying thing with properties is that for the simple query syntax `(property ?b :name "value")` the `"value"` part must be filled. When left to `""` it doesn't select those blocks with an empty value. Instead, it selects all blocks with that property regardless of value. This is why my query is not using that syntax throughout.  
+This query will show different blocks based on different times and conditions. Explanation in the comments of the query.
 
 ```clojure
 #+BEGIN_QUERY
@@ -212,7 +215,7 @@ This query will show different blocks based on different times and conditions. (
 #+END_QUERY
 ```
 ## Tasks
-The tasks (Taakjes) query is my task list for the day, with a small twist. It will only list those tasks that are either scheduled for today or unscheduled on today's journal page. And then only those tasks that have not been planned into my weekplanning. (I use markdown links `[]()` for that, see "Bridges & Twists" in the screenshot, it is underlined)  
+The tasks (Taakjes) query is my task list for the day, with a small twist. It will only list those tasks that are either scheduled for today or unscheduled on today's journal page. And then only those tasks that have not been planned into my weekplanning. I use markdown links `[]()` for that (see "Bridges & Twists" in the screenshot, it is underlined).
 
 ```clojure
 #+BEGIN_QUERY
@@ -276,10 +279,10 @@ The next query to show is focus this week (Focus deze week). As mentioned in [Bu
 #+END_QUERY
 ```
 
-Alternatively I could get the month page that belongs to today directly, however my month pages are based on full weeks. So for example November 1st 2023 is actually on the October page and not the November page. (the first day of a week determines the page I put it on)
+Alternatively, I could get the month page that belongs to today directly. However, my month pages are based on full weeks. So for example November 1st 2023 is actually on the October page and not the November page. The first day of a week determines the page I put it on.
 
 ## Later today
-The last query is Later today (🗓 Later vandaag). Where previous section, 🗓 Planning, resulted in showing the current part of the day (morning, afternoon or evening), this query shows the upcoming parts of the day. So, for example when 🗓 Planning shows the morning, this section shows the afternoon and evening. This way the 🗓 Planning section is less overwhelming.
+The last query is Later today (🗓 Later vandaag). Where the previous section, 🗓 Planning, resulted in showing the current part of the day (morning, afternoon or evening), this query shows the upcoming parts of the day. So for example, when 🗓 Planning shows the morning, this section shows the afternoon and evening. This way the 🗓 Planning section is less overwhelming.
 
 ```clojure
 #+BEGIN_QUERY
