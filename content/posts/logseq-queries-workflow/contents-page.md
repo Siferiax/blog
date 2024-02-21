@@ -1,6 +1,6 @@
 ---
 title: Easy access using the Contents page
-date: 2024-02-29
+date: 2024-02-20
 series:
   - How queries support my Logseq workflow
 tags:
@@ -14,7 +14,7 @@ I use the default Contents page that comes with Logseq as it will open by defaul
 This means it holds both the same information as the Startpage, as well as a lot of extras.
 Let's have a look.
 
-![[IMG_0377.png]] ![[IMG_0378.png]] ![[IMG_0379.png]]
+![contentpage.png](contentpage.png)
 
 That's a long page!! :)
 
@@ -23,13 +23,13 @@ I've also stopped tracking so much, so no food query.
 
 After that comes a lot of tasks queries. 3 for open tasks and 2 for completed ones.
 Task management is a big topic and I wish to do a more in dept post on it in the future, so for now I'll give a simple run down.
-- Gepland (planned) are those tasks that I scheduled for today (or earlier) and that I put into today's plan.
-- Bonus are tasks scheduled for today (or earlier) that aren't on today's plan.
-- Aangemaakt (created) are tasks that are newly created in today's journal without a scheduled date (yet)
-- Gedaan (completed) are repeating tasks I've completed today. 
-- Afgerond (finished) are tasks that are marked done and are in today's journal or have a reference present in today's journal
+- ☑️ Gepland (planned) are those tasks that I scheduled for today (or earlier) and that I put into today's plan.
+- ☑️ Bonus are tasks scheduled for today (or earlier) that aren't on today's plan.
+- ☑️ Aangemaakt (created) are tasks that are newly created in today's journal without a scheduled date (yet)
+- ✅ Gedaan (completed) are repeating tasks I've completed today. 
+- ✅ Afgerond (finished) are tasks that are marked done and are in today's journal or have a reference present in today's journal
 
-Hobby activiteit (hobby activity) is a folded block that contains a list of activities I like to do. It serves as both a quick link list to my hobby pages and a reminder for myself, so I can easily check and pick an activity if necessary.
+🌟 Hobby activiteit (hobby activity) is a folded block that contains a list of activities I like to do. It serves as both a quick link list to my hobby pages and a reminder for myself, so I can easily check and pick an activity if necessary.
 
 Next we have another friend from the Startpage, my planning for today.
 That's the last piece of information the two pages share in common.
@@ -37,32 +37,34 @@ After this is information only available on the contents page. Useful informatio
 I have ordered the information based on how often I wish to check it, or how frequently I use it.
 
 ## Tijd pagina's (time pages)
+![tijdpaginas.png](tijdpaginas.png)
 This year (2024) I'm experimenting with a different way to organize time.
 The unit of time I mostly work with is a week. And in my experience a month is just too short.
 So I decided to block my weeks into 6 weeks, which forms one cycle.
 3 of those cycles form a period. As such I have created a period page, which holds 3 cycles and each week now has its own page.
 For easy navigation that is dynamic I created a query which results in a link to the current period page and the current week page. Both pages have a start and end date property which the query uses.
 
-<(screenshot of properties to show their use)>
+![periode1.png](periode1.png)
 
 ```clojure
 #+BEGIN_QUERY
 {:title [:b "Tijd pagina's"]
- :inputs [:today]
+ :inputs [:today] ;I want the pages based on today, so that's my input
  :query [:find (pull ?w [*])
   :in $ ?today
   :where
-   [?w :block/properties ?prop]
-   [(get ?prop :datum-begin) ?begin]
-   [(get ?prop :datum-eind) ?eind]
-   [(<= ?begin ?today ?eind)]
+   [?w :block/properties ?prop] ;an entity with properties, can be a block or a page
+   [(get ?prop :datum-begin) ?begin] ;that has a property :datum-begin and the value is saved in ?begin
+   [(get ?prop :datum-eind) ?eind] ;that has a property :datum-eind and the value is saved in ?eind
+   [(<= ?begin ?today ?eind)] ;?begin is smaller or equal to ?today and ?today is smaller or equal to ?eind
  ]
- :view (fn [result] (for [r result] [:div [:a.tag.mr-1 {:href (str "#/page/" (clojure.string/replace (get r :block/original-name) "/" "%2F") )} (get r :block/original-name) ] ] ) )
+ :view (fn [result] (for [r result] [:div [:a.tag.mr-1 {:href (str "#/page/" (clojure.string/replace (get r :block/original-name) "/" "%2F") )} (get r :block/original-name) ] ] ) ) ;Show the results as a :a.tag.mr-1 link within a :div (this is hiccup), the a.tag.mr-1 looks are specified in custom.css. The / in the results is replaced with %2F to make the link work
 }
 #+END_QUERY
 ```
 
-## Deze week (this week)
+## 🎯 Deze week (this week)
+![dezeweek.png](dezeweek.png)
 This simply shows the goals I have set for this week. Either as a task to complete, or simply a more general focus.
 These come from my week pages.
 
@@ -88,7 +90,8 @@ These come from my week pages.
 #+END_QUERY
 ```
 
-## Rest van de week (rest of the week)
+## 🗓️ Rest van de week (rest of the week)
+![restweek.png](restweek.png)
 These days I use a simplified week overview to see the bigger picture and plan out the week.
 I figured out a rather sneaky way to use markdown tables. If you add embedded blocks to them, you can have multiple lines within one table cell.
 With the added benefit of being able to create a table anywhere and being able to edit it in place and have all other tables change accordingly. This has been a game changer for my planning.
@@ -156,7 +159,8 @@ This query uses some weird trickery.
 #+END_QUERY
 ```
 
-## Deze Cyclus (this cycle)
+## 🗓️ Deze Cyclus (this cycle)
+![cyclus.png](cyclus.png)
 This query displays the intentions I set for the current cycle. These can be more akin to goals, represented by tasks, but also things to focus on. I try to write my goals as "do this activity" rather than "finish this thing". For example I want to do 7 play sessions of Tears of the Kingdom. Length and what I do in those sessions doesn't matter.
 
 ```clojure
@@ -194,7 +198,8 @@ This query displays the intentions I set for the current cycle. These can be mor
 #+END_QUERY
 ```
 
-## Projecten (projects)
+## 🌋 Projecten (projects)
+![projecten.png](projecten.png)
 I have a title that is a link to my projects page. The actual query is below that with the title Actief (active). I like to always give a title to my queries.
 The result is a simple list of projects that have the status active.
 
@@ -222,8 +227,9 @@ The result is a simple list of projects that have the status active.
 ```
 
 ## Notities (notes)
+![notities.png](notities.png)
 Queries related to my note taking. In all honestly I barely check this section, so no wonder it is all the way at the bottom.
-I've written [a little bit about my note taking in the past](../musings/changing-note-taking). I use different types of notes. I have plain notes I add to my journal, just thoughts and feelings about stuff, I don't generally label those or give them a template. Those fall outside of this whole section.
+I've written [a little bit about my note taking in the past](../../musings/changing-note-taking). I use different types of notes. I have plain notes I add to my journal, just thoughts and feelings about stuff, I don't generally label those or give them a template. Those fall outside of this whole section.
 This section is for bigger notes. Ideas, and notes about articles, things to further explore later.
 
 ### Vandaag (today)
