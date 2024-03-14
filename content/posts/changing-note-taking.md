@@ -1,8 +1,6 @@
 ---
 title: "Changing the way I make notes"
 date: 2023-07-23
-series: 
-  - Musings
 tags:
   - Logseq
   - PKM

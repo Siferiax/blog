@@ -1,6 +1,6 @@
 ---
 title: Easy access using the Contents page
-date: 2024-02-20
+date: 2024-03-20
 series:
   - How queries support my Logseq workflow
 tags:
@@ -75,14 +75,15 @@ These come from my week pages.
  :query [:find (pull ?doel [*])
   :in $ ?today
   :where
+  ;the same property usage as before.
    [?w :block/properties ?prop]
    [(get ?prop :datum-begin) ?begin]
    [(get ?prop :datum-eind) ?eind]
    [(<= ?begin ?today ?eind)]
-   [?header :block/page ?w]
-   [?header :block/content ?hc]
-   [(clojure.string/includes? ?hc "🎯 Week Doelen")]
-   [?doel :block/parent ?header]
+   [?header :block/page ?w] ;blocks on the pages we found so far
+   [?header :block/content ?hc] ;the content of those blocks
+   [(clojure.string/includes? ?hc "🎯 Week Doelen")] ;the content has to include this text
+   [?doel :block/parent ?header] ;blocks that are the direct child of the blocks we found.
  ]
  :result-transform :sort-by-list
  :breadcrumb-show? false
@@ -97,60 +98,60 @@ I figured out a rather sneaky way to use markdown tables. If you add embedded bl
 With the added benefit of being able to create a table anywhere and being able to edit it in place and have all other tables change accordingly. This has been a game changer for my planning.
 Each day of the week has a number of blocks associated with it. I made a table with all days of the week as an overview, but I also created tables for each day separately. Those you see in the query result.
 The naming of "2.Thu" is deliberate. The 2 is used for sorting and the "Thu" is used by the query for finding the days I want to show.
-As my coach comes around on Tuesday, my weeks are planning Wed-Tue. As said the blocks are for each weekday, this means they are not for each date. The blocks are the same whether it is Monday January 1st or Monday January 7th. So I don't want to see things beyond Tuesday as that would be blocks that have already happened.
+As my coach comes around on Tuesday, my weeks are planned Wed-Tue. As said the blocks are for each weekday, this means they are not for each date. The blocks are the same whether it is Monday January 1st or Monday January 7th. So I don't want to see things beyond Tuesday as that would be blocks that have already happened.
 This query uses some weird trickery. 
 
 ```clojure
 #+BEGIN_QUERY
 {:title [:b "🗓️ Rest van de week"]
- :inputs [:today :tomorrow :+1d :+2d :+3d :+4d :+5d :+6d :+7d]
+ :inputs [:today :tomorrow :+1d :+2d :+3d :+4d :+5d :+6d :+7d] ;inputs today and a number of days after today. This is an entire weeks worth of dates basically.
  :query [:find (pull ?b [*])
   :in $ ?vandaag ?morgen ?een ?twee ?drie ?vier ?vijf ?zes ?zeven
   :where
-   [?v :block/journal-day ?vandaag]
-   [?v :block/original-name ?vandaagnm]
-   [(subs ?vandaagnm 0 3) ?vdag]
-   (or
+   [?v :block/journal-day ?vandaag] ;get today's journal page.
+   [?v :block/original-name ?vandaagnm] ;get its exact name. Mine would be "EEE dd MMM yyyy" format. The EEE is what matters here, that's the day name. (Eg. Tue)
+   [(subs ?vandaagnm 0 3) ?vdag] ;get that day name part
+   (or ;here we will determine how many days into the future we wish to look based on what day today is.
      (and
-       [(= ?vdag "Mon")]
-       [(ground ?een) ?week]
+       [(= ?vdag "Mon")] ;if today is Monday,
+       [(ground ?een) ?week] ;save the value of ?een (today+1) in variable ?week
      )
      (and
-       [(= ?vdag "Tue")]
-       [(ground ?zeven) ?week]
+       [(= ?vdag "Tue")] ;if today is Tuesday,
+       [(ground ?zeven) ?week] ;save the value of ?zeven (today+7) in variable ?week
      )
      (and
-       [(= ?vdag "Wed")]
-       [(ground ?zes) ?week]
+       [(= ?vdag "Wed")] ;if today is Wednesday,
+       [(ground ?zes) ?week] ;save the value of ?zes (today+6) in variable ?week
      )
      (and
-       [(= ?vdag "Thu")]
-       [(ground ?vijf) ?week]
+       [(= ?vdag "Thu")] ;if today is Thursday,
+       [(ground ?vijf) ?week] ;save the value of ?vijf (today+5) in variable ?week
      )
      (and
-       [(= ?vdag "Fri")]
-       [(ground ?vier) ?week]
+       [(= ?vdag "Fri")] ;if today is Friday,
+       [(ground ?vier) ?week] ;save the value of ?vier (today+4) in variable ?week
      )
      (and
-       [(= ?vdag "Sat")]
-       [(ground ?drie) ?week]
+       [(= ?vdag "Sat")] ;if today is Saturday,
+       [(ground ?drie) ?week] ;save the value of ?drie (today+3) in variable ?week
      )
      (and
-       [(= ?vdag "Sun")]
-       [(ground ?twee) ?week]
+       [(= ?vdag "Sun")] ;if today is Sunday,
+       [(ground ?twee) ?week] ;save the value of ?twee (today+2) in variable ?week
      )
    )
-   [?j :block/journal-day ?dag]
-   [(<= ?morgen ?dag ?week)]
-   [?j :block/original-name ?journalnm]
-   [(subs ?journalnm 0 3) ?jdag]
-   [?w :block/name "weekplanning"]
-   [?pb :block/page ?w]
-   [?pb :block/content ?pc]
-   [(clojure.string/starts-with? ?pc "Block embeds")]
-   [?b :block/parent ?pb]
-   [?b :block/content ?c]
-   [(clojure.string/includes? ?c ?jdag)]
+   [?j :block/journal-day ?dag] ;get journal pages for day ?dag.
+   [(<= ?morgen ?dag ?week)] ;whereby ?dag is greater or equal to ?morgen (tomorrow) and smaller of equal to ?week (determined above)
+   [?j :block/original-name ?journalnm] ;get the page names
+   [(subs ?journalnm 0 3) ?jdag] ;get the day names
+   [?w :block/name "weekplanning"] ;page weekplanning 
+   [?pb :block/page ?w] ;get blocks on page weekplanning
+   [?pb :block/content ?pc] ;get their content
+   [(clojure.string/starts-with? ?pc "Block embeds")] ;the content needs to start with this text
+   [?b :block/parent ?pb] ;get blocks that have the earlier blocks as parent
+   [?b :block/content ?c] ;get their content
+   [(clojure.string/includes? ?c ?jdag)] ;their content needs to include the day names we determined above.
  ]
  :breadcrumb-show? false
  :group-by-page? false
@@ -170,14 +171,14 @@ This query displays the intentions I set for the current cycle. These can be mor
  :query [:find (pull ?b [*])
   :in $ ?today
   :where
-;bepaal welke cyclus het is
+;determine which cycle it is, this uses the current week page, which has a cycle number in property :cyclus
    [?p :block/properties ?prop]
    [(get ?prop :cyclus) ?num]
    [(str "Cyclus " ?num) ?current]
    [(get ?prop :datum-begin) ?begin]
    [(get ?prop :datum-eind) ?eind]
    [(<= ?begin ?today ?eind)]
-;haal de intentie van de cyclus op
+;get the cycle's intention, this is written on the period page.
    [?periode :block/properties ?pp]
    [(get ?pp :datum-begin) ?pbegin]
    [(get ?pp :datum-eind) ?peind]
@@ -230,7 +231,7 @@ The result is a simple list of projects that have the status active.
 ![notities.png](notities.png)
 Queries related to my note taking. In all honestly I barely check this section, so no wonder it is all the way at the bottom.
 I've written [a little bit about my note taking in the past](../../musings/changing-note-taking). I use different types of notes. I have plain notes I add to my journal, just thoughts and feelings about stuff, I don't generally label those or give them a template. Those fall outside of this whole section.
-This section is for bigger notes. Ideas, and notes about articles, things to further explore later.
+This section is for bigger notes, like ideas, notes about articles, or things to explore further in the future.
 
 ### Vandaag (today)
 The first query simply shows any notes I made today. 
@@ -254,7 +255,7 @@ The first query simply shows any notes I made today.
 ```
 
 ### Inbox
-A count of blocks present on my inbox pages. Mostly used for highlights I shared to Logseq that I haven't processed yet.
+A count of blocks present on my inbox page. Mostly used for highlights I shared to Logseq that I haven't processed yet.
 ```clojure
 #+BEGIN_QUERY
 {:title [:h4 "📥 Inbox"]
@@ -327,3 +328,6 @@ A random note that is under construction. As a reminder of a random note, hopefu
 }
 #+END_QUERY
 ```
+
+And that concludes my content page. This series has now covered most of my Logseq use.
+Next time I will start a new series all about my task management.
