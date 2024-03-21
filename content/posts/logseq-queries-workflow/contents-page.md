@@ -1,12 +1,12 @@
 ---
 title: Easy access using the Contents page
-date: 2024-03-20
+date: 2024-03-21
 series:
   - How queries support my Logseq workflow
 tags:
   - Logseq
 TocOpen: false
-draft: true
+draft: false
 ---
 This blog is quickly becoming an archive of how I used to do things. Since the [last post about my Startpage](../start-page-and-queries) it has continued to change. And so too has my contents page.
 
